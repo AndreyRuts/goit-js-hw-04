@@ -1,8 +1,22 @@
-function getElementWidth(content, padding, border) { 
-    let getElementWidth = Number.parseInt(content) + Number.parseInt(padding) * 2 + Number.parseInt(border) * 2;
-    return getElementWidth;
-}
+const profile = {
+    username: "Jacob",
+    playTime: 300,
 
-console.log(getElementWidth("50px", "8px", "4px"));
-console.log(getElementWidth("60px", "12px", "8.5px"));
-console.log(getElementWidth("200px", "0px", "0px"));
+    getInfo() {
+        return `${profile.username} has ${profile.playTime} active hours!`;
+    },
+    changeUsername(newName) {
+        return profile.username = newName;
+    },
+    updatePlayTime(hours) {
+        return profile.playTime += hours;
+    }
+};
+
+console.log(profile.getInfo());
+
+profile.changeUsername("Marco");
+console.log(profile.getInfo());
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo());
